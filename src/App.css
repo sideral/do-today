@@ -30,5 +30,6 @@ li{
 li > .button{
   position: absolute;
   right: 0;
+  top: 11px;
 }
 
