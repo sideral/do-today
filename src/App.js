@@ -6,17 +6,14 @@ import Form from './Form';
 
 function App() {
   const [items, setItems] = useState(JSON.parse(localStorage.getItem('todo.items')) || []);
-  const [nextItemId, setNextItemId] = useState(0);
 
   useEffect(function storeItems() {
     localStorage.setItem('todo.items', JSON.stringify(items));
-    let next = items.reduce((id, item) => Number(item.id) > id? Number(item.id) : id, 0);
-    setNextItemId(next);
-  }, [items]);
+  });
 
   const onItemAdded = function(text){
+    const nextItemId = items.reduce((id, item) => Number(item.id) > id? Number(item.id) : id, 0);
     setItems(items.concat([{id: nextItemId + 1, text: text}]));
-    setNextItemId(nextItemId + 1);
   };
 
   const onItemDone = function(itemId){
