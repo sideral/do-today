@@ -37,4 +37,14 @@ li > .button{
 li > span{
   display: inline-block;
   margin-right: 35px;
+  cursor: pointer;
+}
+
+.focus-item {
+  font-size: 60px;
+  cursor: pointer;
+}
+
+.focus-item > span {
+  color: #a4b2bd
 }
